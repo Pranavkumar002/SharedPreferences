@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPreferences = getSharedPreferences(
-            resources.getString(R.string.app_name), Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
         if(sharedPreferences.contains("Pranav")){
