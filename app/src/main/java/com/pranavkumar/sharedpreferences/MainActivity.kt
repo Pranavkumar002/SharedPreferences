@@ -1,6 +1,7 @@
 package com.pranavkumar.sharedpreferences
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,15 +28,13 @@ class MainActivity : AppCompatActivity() {
                 binding.etEnterValue.error = "Enter value to save"
             }else{
                 editor.putString("Pranav", binding.etEnterValue.text.toString())
+                var intent = Intent(this,MainActivity2::class.java)
+                startActivity(intent)
                 editor.commit()
             }
         }
 
-        binding.btnRemove.setOnClickListener {
-            editor.clear()
-            editor.remove("Pranav")
-            editor.commit()
-        }
+
 
     }
 }
